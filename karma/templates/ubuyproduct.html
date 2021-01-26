@@ -1,0 +1,201 @@
+{% extends 'ulayout.html' %}
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+   <head>
+      <title>Toys Shop an Ecommerce Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
+      <!--meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Toys Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+      <script>
+         addEventListener("load", function () {
+             setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+             window.scrollTo(0, 1);
+         }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="../static/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+      <!-- //font-awesome icons -->
+      <!--Shoping cart-->
+      <link rel="stylesheet" href="../static/css/shop.css" type="text/css" />
+      <!--//Shoping cart-->
+      <!--checkout-->
+      <link rel="stylesheet" type="text/css" href="../static/css/checkout.css">
+      <!--//checkout-->
+      <!--stylesheets-->
+      <link href="../static/css/style.css" rel='stylesheet' type='text/css' media="all">
+      <!--//stylesheets-->
+      <link href="//fonts.googleapis.com/css?family=Sunflower:500,700" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+   </head>
+   <body>
+      <!--headder-->
+      
+         <!--//headder-->
+         <!-- banner -->
+         
+         <!-- short -->
+         
+         </div>
+         <!-- //short-->
+         <!--Checkout-->  
+         <!-- //banner -->
+         <!-- top Products -->
+      <!--subscribe-address-->
+      
+      <!-- //footer -->
+      <!-- Modal 1-->
+      <section class="checkout py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <div class="shop_inner_inf">
+               <div class="privacy about">
+                  <h3>Aquarium <span>Products</span></h3>
+                  <div class="checkout-right">
+                     <h4><span></span></h4>
+                     <table class="timetable_sub">
+                        <thead>
+                           <tr>
+                              <th>Image</th>
+                              <th>Name</th>
+                              <th>Brand</th>
+                              <th>Total Price</th>
+                              <th>Payment</th>
+                              <th>Delivery Status</th>
+                              <th></th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                            {% for pdt in pdt %}
+                           <tr class="rem1">
+                              <td class="invert-image"><a href="single.html"><img src="../static/pics/{{pdt.image}}" style="width: 119px;height: 140px;" alt=" " class="img-responsive"></a></td>
+                              <td class="invert"> {{pdt.name}}</td>
+                              <td class="invert">{{pdt.brand}}</td>
+                              <td class="invert">${{pdt.price}}</td>
+                              <td class="invert"> {{pdt.payment}}</td>
+                              <td class="invert">{{pdt.delivery}}</td>
+                             <td class="invert"></td>
+                             </tr>
+                           {% endfor %}
+                        </tbody>
+                     </table>
+                  </div>
+                  
+               </div>
+            </div>
+            <!-- //top products -->
+         </div>
+   </section>
+      <!-- //Modal 1-->
+      <!--js working-->
+      <script src='../static/js/jquery-2.2.3.min.js'></script>
+      <!--//js working-->
+      <!-- cart-js -->	
+      <script src="../static/js/minicart.js"></script>
+      <script>
+         toys.render();
+         
+         toys.cart.on('toys_checkout', function (evt) {
+             var items, len, i;
+         
+             if (this.subtotal() > 0) {
+                 items = this.items();
+         
+                 for (i = 0, len = items.length; i < len; i++) {}
+             }
+         });
+      </script>
+      <!--// cart-js -->
+      <!--quantity-->
+      <script>
+         $('.value-plus').on('click', function () {
+             var divUpd = $(this).parent().find('.value'),
+                 newVal = parseInt(divUpd.text(), 10) + 1;
+             divUpd.text(newVal);
+         });
+         
+         $('.value-minus').on('click', function () {
+             var divUpd = $(this).parent().find('.value'),
+                 newVal = parseInt(divUpd.text(), 10) - 1;
+             if (newVal >= 1) divUpd.text(newVal);
+         });
+      </script>
+      <!--quantity-->
+      <!--closed-->
+      <script>
+         $(document).ready(function (c) {
+             $('.close1').on('click', function (c) {
+                 $('.rem1').fadeOut('slow', function (c) {
+                     $('.rem1').remove();
+                 });
+             });
+         });
+      </script>
+      <script>
+         $(document).ready(function (c) {
+             $('.close2').on('click', function (c) {
+                 $('.rem2').fadeOut('slow', function (c) {
+                     $('.rem2').remove();
+                 });
+             });
+         });
+      </script>
+      <script>
+         $(document).ready(function (c) {
+             $('.close3').on('click', function (c) {
+                 $('.rem3').fadeOut('slow', function (c) {
+                     $('.rem3').remove();
+                 });
+             });
+         });
+      </script>
+      <!--//closed-->
+      <!-- start-smoth-scrolling -->
+      <script src="../static/js/move-top.js"></script>
+      <script src="../static/js/easing.js"></script>
+      <script>
+         jQuery(document).ready(function ($) {
+             $(".scroll").click(function (event) {
+                 event.preventDefault();
+                 $('html,body').animate({
+                     scrollTop: $(this.hash).offset().top
+                 }, 900);
+             });
+         });
+      </script>
+      <!-- start-smoth-scrolling -->
+      <!-- here stars scrolling icon -->
+      <script>
+         $(document).ready(function () {
+         
+             var defaults = {
+                 containerID: 'toTop', // fading element id
+                 containerHoverID: 'toTopHover', // fading element hover id
+                 scrollSpeed: 1200,
+                 easingType: 'linear'
+             };
+             $().UItoTop({
+                 easingType: 'easeOutQuart'
+             });
+         
+         });
+      </script>
+      <!-- //here ends scrolling icon -->
+      <!--bootstrap working-->
+      <script src="../static/js/bootstrap.min.js"></script>
+      <!-- //bootstrap working-->
+   </body>
+</html>
+
+{% endblock %}

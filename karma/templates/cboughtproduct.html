@@ -1,0 +1,60 @@
+{% extends 'clayout.html' %}
+{% block content %}
+
+
+
+<div class="table-responsive" id="sailorTableArea" style="width: 1116px;padding-left: 140px;">
+    <table id="sailorTable" class="table table-striped table-bordered css-serial" width="100%" >
+ 
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>NAME</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Payment</th>
+                <th>Delname</th>
+                <th>DelAddress</th>
+                <th>Staff</th>
+                <th>Delivery Status</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+                {% for buy in buy %}
+            <tr>
+                
+                <td></td>
+                <td>{{buy.name}}</td>
+                <td>{{buy.brand}}</td>
+                <td>{{buy.price}}</td>
+                <td>{{buy.payment}}</td>
+                <td>{{buy.delname}}</td>
+                <td>{{buy.deladdress}}</td>
+                <td>{{buy.staffname}}</td>
+                <td>{{buy.delivery}}</td>
+             
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+    </div>
+
+
+<style>
+
+.css-serial {
+  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+  counter-increment: serial-number;  /* Increment the serial number counter */
+  content: counter(serial-number);  /* Display the counter */
+}
+
+
+</style>
+
+
+
+    {% endblock %}

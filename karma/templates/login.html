@@ -1,0 +1,120 @@
+{% extends 'playout.html'%}
+{% block content %}
+<!------ Include the above in your HEAD tag ---------->
+
+<body style="background-image: url(../static/images/login.jpg);
+  background-size: 1350px, 157px, auto;">
+        <div class="col-md-8">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category }}">
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+              </div>
+    <div id="login">
+        <br><br><br>
+
+        <div class="container" style="padding-bottom: 100px;">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form action="" method="POST">
+                            {{ form.hidden_tag() }}
+                            <h3 class="text-center text-white pt-5">Login form</h3>
+                            <div class="form-group">
+                                    {{ form.email.label(class="form-control-label") }}
+                                    {% if form.email.errors %}
+                                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.email.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.email(class="form-control form-control-lg") }}
+                                    {% endif %}
+                            </div>
+                            <div class="form-group">
+                                    {{ form.password.label(class="form-control-label") }}
+                                    {% if form.password.errors %}
+                                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.password.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.password(class="form-control form-control-lg") }}
+                                    {% endif %}
+                            </div>
+                            <div class="form-check">
+                                    {{ form.remember(class="form-check-input") }}
+                                    {{ form.remember.label(class="form-check-label") }}
+                                </div>
+                            <div class="form-group">
+                                   
+                                    {{ form.submit(class="btn btn-outline-info") }}
+                                    <small class="text-muted ml-2">
+                                        <a href="/resetrequest">Forgot Password?</a>
+                                    </small>
+
+                                    <small class="text-muted ml-2">
+                                        <a href="/registeruser" class="text-info" style="font-size: 20px;float:right;">Register here</a>
+                                    </small>
+
+
+                                    
+                            </div>
+                     
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  height: 100vh;
+}
+#login .container #login-row #login-column #login-box {
+    margin-top: 26px;
+    max-width: 600px;
+    height: 410px;
+    border: 1px solid #9c9c9c80;
+    background-color: #494d56ba;
+        color: white;
+    font-size: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+
+.text-info {
+    color: #ffffff!important;
+}
+a{
+    color: #ffffff;
+}
+.btn-outline-info {
+    font-size: 22px;
+    color: #fdfdfd;
+    width: 145px;
+    background-color: #0a0a0ad4;
+    background-image: none;
+    border-color: #eeeeef;
+}
+</style>
+
+{%endblock%}
