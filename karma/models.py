@@ -103,3 +103,9 @@ class Classvideo(db.Model):
     owner = db.Column(db.String(80))
     desc = db.Column(db.String(80))
     video = db.Column(db.String(200))
+
+
+class Gallery(db.Model):
+    id= db.Column(db.Integer, primary_key=True)
+    name= db.Column(db.VARCHAR)
+    img = db.Column(db.String(20), nullable=False, default='default.jpg')

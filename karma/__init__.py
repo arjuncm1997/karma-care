@@ -8,7 +8,7 @@ from flask_wtf import FlaskForm,CSRFProtect
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '8ea2a86e42689205dde0ba81f31138b6'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///aqua.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///karma.db'
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
