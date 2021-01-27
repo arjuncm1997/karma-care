@@ -748,3 +748,4 @@ def deleteimage(id):
 def gallery():
     gal = Gallery.query.all()
     return render_template('gallery.html',gal=gal)
+    
