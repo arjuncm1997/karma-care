@@ -187,7 +187,7 @@ def admin():
 
 
 def sendemail(email,password):
-    msg = Message(' Aqua Botanium Registeration',
+    msg = Message(' Karma Care',
                   recipients=[email])
     msg.body = f'''  Your Password is, {password}  '''
     mail.send(msg)
